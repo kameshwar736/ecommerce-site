@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+/* marquee carousel */
+.marquee {
+  overflow: hidden;
+}
+
+.marquee__content {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee 35s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -1,22 +1,19 @@
-import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
-import banner from '../../../public/images/banner.png'
 
 const TopBanner = () => {
-
-  const BrandsLogo = [
-    Versace , Zara , Gucci ,
-  ]
-
-
   return (
     <>
-    <Image src={banner} className='w-full'/>
-
-      {/* courosel */}
-    <div>
-      
-    </div>
+      <div className="bg-black text-white py-2">
+        <div className="max-w-7xl mx-auto flex justify-center items-center">
+          <p className="text-xs md:text-sm">
+            Sign up and get 20% off to your first order.{" "}
+            <Link href="#" className="underline font-medium">
+              Sign Up Now
+            </Link>
+          </p>
+        </div>
+      </div>
     </>
   )
 }

@@ -27,10 +27,10 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body>
-        <Navbar />
-        <TopBanner />
-        
 
+        <TopBanner/>
+        <Navbar />
+        
         <main>{children}</main>
 
         <Newsletter />
