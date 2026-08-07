@@ -14,7 +14,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className='flex p-5 px-4 justify-evenly items-center mt-5'>
+            <div className='flex  mx-28 gap-20 py-8 items-center  '>
                 <div>
                     <h1 className='text-3xl font-bold'> SHOP.CO</h1>
                 </div>
@@ -28,9 +28,9 @@ const Navbar = () => {
                 <div>
                     <input className='w-130 border p-2 rounded-2xl px-8' type="text" placeholder='Search for products' />
                 </div>
-                <div className='flex gap-8 w-6'>
-                    <Image src={cart} />
-                    <Image src={user} />
+                <div className='flex gap-6 w-6'>
+                    <Image src={cart} alt='icon cart' />
+                    <Image src={user} alt='icon user'/>
                 </div>
             </div>
         </>
