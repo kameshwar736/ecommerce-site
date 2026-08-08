@@ -14,10 +14,10 @@ const BrandLogo = () => {
   return (
    <>
    {/* carousel */}
-      <div className='marquee bg-black h-30'>
+      <div className='marquee bg-black h-30 pt-8'>
         <div className='marquee__content gap-20 justify-center items-center'>
           {[...BrandsLogo, ...BrandsLogo].map((logo, i) => (
-            <div key={`${logo.src}-${i}`} className='flex w-50'>
+            <div key={`${logo.src}-${i}`} className='flex w-40'>
               <Image
                 src={logo}
                 alt={`brand logo ${i + 1}`}

@@ -8,7 +8,7 @@ const Navbar = () => {
     const navLinks = [
         { name: "Shop", href: "/category" },
         { name: "On Sale", href: "#" },
-        { name: "New Arrivals", href: "#" },
+        { name: "New Arrivals", href: "#newArrival" },
         { name: "Brands", href: "#" },
     ];
 

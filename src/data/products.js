@@ -1,40 +1,86 @@
-const products = [
+
+export const products = [
   {
     id: 1,
-    name: "T-shirt with Tape Details",
-    image: "/images/products/product1.png",
-    rating: 4.5,
+    name: "Vertical Striped Shirt",
+    image: '/products/verticalStripShirt.webp' ,
     price: 120,
     oldPrice: 150,
     discount: 20,
+    rating: 4,
+    section: "new-arrivals",
   },
-  {
+   {
     id: 2,
-    name: "Skinny Fit Jeans",
-    image: "/images/products/product2.png",
-    rating: 3.5,
-    price: 240,
-    oldPrice: 260,
-    discount: 10,
+    name:" loose fit bermuda short",
+    image:  '/products/shorts.jpg',
+    price: 120,
+
+
+    rating: 4.5,
+    section: "new-arrivals",
   },
   {
     id: 3,
-    name: "Checkered Shirt",
-    image: "/images/products/product3.png",
+    name: "Courage TShirt",
+    image: '/products/couragetshirt.jpg',
+    price: 120,
+    oldPrice: 150,
+    discount: 20,
     rating: 4,
-    price: 180,
-    oldPrice: null,
-    discount: null,
+    section: "new-arrivals",
   },
-  {
+   {
     id: 4,
-    name: "Sleeve Striped T-Shirt",
-    image: "/images/products/product4.png",
-    rating: 5,
-    price: 130,
-    oldPrice: 160,
-    discount: 30,
+    name: "Skinny Jean",
+    image: '/products/jean.jpg',
+    price: 120,
+    oldPrice: 150,
+    discount: 20,
+    rating: 4.5,
+    section: "new-arrivals",
   },
+
+   {
+    id: 5,
+    name: "TShirt with Tape Detail",
+    image: '/products/tapeT.webp',
+    price: 240,
+    rating: 5,
+    section: "top-selling",
+  },
+   {
+    id: 6,
+    name: "Sky Blue Jean",
+    image: '/products/SkyBlueJean.jpg',
+    price: 240,
+    rating: 5,
+    section: "top-selling",
+  },
+   {
+    id: 7,
+    name: "Checked Shirt",
+    image: '/products/checkedShirt.jpg',
+    price: 240,
+    rating: 5,
+    section: "top-selling",
+  },
+   {
+    id: 8,
+    name: "Sleve Shirt",
+    image: '/products/sleve.jpg',
+    price: 240,
+    rating: 5,
+    section: "top-selling",
+  },
+
+
+
+
+
+
+
+  
 ];
 
 export default products;

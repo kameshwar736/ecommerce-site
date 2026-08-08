@@ -9,7 +9,7 @@ const Hero = () => {
 
   return (
     <>
-      <Image src={banner} alt='img' className='w-full h-180'/>
+      <Image src={banner} alt='img' priority className='w-full h-180'/>
      
     </>
   )
