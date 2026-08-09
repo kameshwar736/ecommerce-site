@@ -1,8 +1,11 @@
+import FilterSidebar from '@/components/category/FilterSidebar'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>category page</div>
+   <>
+   <FilterSidebar/>
+   </>
   )
 }
 

@@ -4,6 +4,7 @@ import TopBanner from "@/components/layout/TopBanner";
 import Navbar from "@/components/layout/Navbar";
 import Newsletter from "@/components/layout/Newsletter";
 import Footer from "@/components/layout/Footer";
+import { ProductProvider } from "@/contexts/ProductContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,8 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body>
-
+        <ProductProvider>
+          
         <TopBanner/>
         <Navbar />
         
@@ -36,6 +38,7 @@ export default function RootLayout({ children }) {
         <Newsletter />
 
         <Footer />
+        </ProductProvider>
       </body>
     </html>
   );

@@ -9,16 +9,19 @@ export const products = [
     discount: 20,
     rating: 4,
     section: "new-arrivals",
+    category : "casual",
+    type   : "Shirt"
+  
   },
    {
     id: 2,
     name:" loose fit bermuda short",
     image:  '/products/shorts.jpg',
     price: 120,
-
-
     rating: 4.5,
     section: "new-arrivals",
+    category : "gym",
+    type : "Short"
   },
   {
     id: 3,
@@ -29,6 +32,8 @@ export const products = [
     discount: 20,
     rating: 4,
     section: "new-arrivals",
+    category : "gym",
+    type : "T-Shirt"
   },
    {
     id: 4,
@@ -39,6 +44,8 @@ export const products = [
     discount: 20,
     rating: 4.5,
     section: "new-arrivals",
+    category : "formal",
+    type : "Jean"
   },
 
    {
@@ -48,6 +55,8 @@ export const products = [
     price: 240,
     rating: 5,
     section: "top-selling",
+    category : "formal",
+    type : "T-Shirt"
   },
    {
     id: 6,
@@ -56,6 +65,8 @@ export const products = [
     price: 240,
     rating: 5,
     section: "top-selling",
+    category : "casual",
+    type : "Jean"
   },
    {
     id: 7,
@@ -64,6 +75,8 @@ export const products = [
     price: 240,
     rating: 5,
     section: "top-selling",
+    category : "casual",
+    type : "Shirt"
   },
    {
     id: 8,
@@ -72,6 +85,8 @@ export const products = [
     price: 240,
     rating: 5,
     section: "top-selling",
+    category : "casual",
+    type : "Shirt"
   },
 
 
