@@ -1,18 +1,17 @@
-import Image from 'next/image'
-import banner from '../../../public/images/banner.png'
-
+import Image from "next/image";
+import banner from "../../../public/images/banner.png";
 
 const Hero = () => {
-
- 
-
-
   return (
-    <>
-      <Image src={banner} alt='img' priority className='w-full h-180'/>
-     
-    </>
-  )
-}
+    <section className="w-full">
+      <Image
+        src={banner}
+        alt="Hero Banner"
+        priority
+        className="w-full h-auto object-cover"
+      />
+    </section>
+  );
+};
 
-export default Hero
+export default Hero;

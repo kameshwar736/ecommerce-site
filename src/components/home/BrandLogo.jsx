@@ -1,34 +1,41 @@
-import React from 'react'
-import banner from '../../../public/images/banner.png'
-import versace from '../../../public/images/versace.png'
-import zara from '../../../public/images/zara.png'
-import gucci from '../../../public/images/gucci.png'
-import prada from '../../../public/images/prada.png'
-import calvin from '../../../public/images/calvin.png'
-import Image from 'next/image'
+import React from "react";
+import Image from "next/image";
+
+import versace from "../../../public/images/versace.png";
+import zara from "../../../public/images/zara.png";
+import gucci from "../../../public/images/gucci.png";
+import prada from "../../../public/images/prada.png";
+import calvin from "../../../public/images/calvin.png";
 
 const BrandLogo = () => {
-
-     const BrandsLogo = [ versace, zara, gucci ,prada,calvin ]
+  const brands = [
+    versace,
+    zara,
+    gucci,
+    prada,
+    calvin,
+  ];
 
   return (
-   <>
-   {/* carousel */}
-      <div className='marquee bg-black h-30 pt-8'>
-        <div className='marquee__content gap-20 justify-center items-center'>
-          {[...BrandsLogo, ...BrandsLogo].map((logo, i) => (
-            <div key={`${logo.src}-${i}`} className='flex w-40'>
-              <Image
-                src={logo}
-                alt={`brand logo ${i + 1}`}
-                className='object-contain'
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-   </>
-  )
-}
+    <section className="bg-black overflow-hidden py-8">
+      <div className="flex w-max animate-marquee gap-12 md:gap-20 lg:gap-28">
 
-export default BrandLogo
+        {[...brands, ...brands].map((logo, index) => (
+          <div
+            key={index}
+            className="flex items-center justify-center min-w-fit"
+          >
+            <Image
+              src={logo}
+              alt="Brand Logo"
+              className="h-6 md:h-8 lg:h-10 w-auto object-contain"
+            />
+          </div>
+        ))}
+
+      </div>
+    </section>
+  );
+};
+
+export default BrandLogo;

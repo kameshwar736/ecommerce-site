@@ -1,112 +1,136 @@
-import React from 'react'
-import twitter from '../../../public/icons/twitter.png'
-import facebook from '../../../public/icons/facebook.png'
-import insta from '../../../public/icons/insta.png'
-import github from '../../../public/icons/github.png'
-import visa from '../../../public/icons/visa.png'
-import mastercard from '../../../public/icons/mastercard.png'
-import paypal from '../../../public/icons/paypal.png'
-import applepay from '../../../public/icons/applepay.png'
-import gpay from '../../../public/icons/gpay.png'
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
+import twitter from "../../../public/icons/twitter.png";
+import facebook from "../../../public/icons/facebook.png";
+import insta from "../../../public/icons/insta.png";
+import github from "../../../public/icons/github.png";
 
-import Image from 'next/image'
-import Link from 'next/link'
+import visa from "../../../public/icons/visa.png";
+import mastercard from "../../../public/icons/mastercard.png";
+import paypal from "../../../public/icons/paypal.png";
+import applepay from "../../../public/icons/applepay.png";
+import gpay from "../../../public/icons/gpay.png";
 
 const Footer = () => {
-
-
-  const icons = [twitter, facebook, insta, github]
-  const paymentLogo = [visa,mastercard,paypal,applepay,gpay]
+  const icons = [twitter, facebook, insta, github];
+  const paymentLogo = [visa, mastercard, paypal, applepay, gpay];
 
   return (
-    <>
-      <div className='flex px-20 p-5 gap-35 '>
+    <footer className="bg-[#F0F0F0] pt-12">
 
-        <div className='flex flex-col gap-4 w-70'>
+      {/* Top Section */}
+      <div className="max-w-[1440px] mx-auto px-5 md:px-10 lg:px-20">
 
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+
+          {/* Logo */}
+          <div className="lg:col-span-1">
+
+            <h1 className="text-3xl font-black">SHOP.CO</h1>
+
+            <p className="text-gray-500 mt-5 leading-7">
+              We have clothes that suit your style and which you're proud to wear.
+              From women to men.
+            </p>
+
+            <div className="flex gap-3 mt-6">
+              {icons.map((icon, index) => (
+                <Image
+                  key={index}
+                  src={icon}
+                  alt="social"
+                  className="w-9 h-9 cursor-pointer hover:scale-110 transition"
+                />
+              ))}
+            </div>
+
+          </div>
+
+          {/* Company */}
           <div>
-            <h1 className='text-3xl font-bold'>Shop.co</h1>
+            <h2 className="font-bold tracking-widest uppercase mb-5">
+              Company
+            </h2>
+
+            <div className="flex flex-col gap-3 text-gray-500">
+              <Link href="/">About</Link>
+              <Link href="/">Features</Link>
+              <Link href="/">Works</Link>
+              <Link href="/">Career</Link>
+            </div>
           </div>
-          <div className='text-sm'>
-            We have clothes that suits your style and which you're proud to wear.From women to men
+
+          {/* Help */}
+          <div>
+            <h2 className="font-bold tracking-widest uppercase mb-5">
+              Help
+            </h2>
+
+            <div className="flex flex-col gap-3 text-gray-500">
+              <Link href="/">Customer Support</Link>
+              <Link href="/">Delivery Details</Link>
+              <Link href="/">Terms & Conditions</Link>
+              <Link href="/">Privacy Policy</Link>
+            </div>
           </div>
-          <div className='flex gap-3 mt-3'>
-            {
-              icons?.map((e, i) => (
-                <Image src={e} alt='img' key={i + 1} className='w-7' />
-              ))
-            }
+
+          {/* FAQ */}
+          <div>
+            <h2 className="font-bold tracking-widest uppercase mb-5">
+              FAQ
+            </h2>
+
+            <div className="flex flex-col gap-3 text-gray-500">
+              <Link href="/">Account</Link>
+              <Link href="/">Manage Deliveries</Link>
+              <Link href="/">Orders</Link>
+              <Link href="/">Payments</Link>
+            </div>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h2 className="font-bold tracking-widest uppercase mb-5">
+              Resources
+            </h2>
+
+            <div className="flex flex-col gap-3 text-gray-500">
+              <Link href="/">Free eBooks</Link>
+              <Link href="/">Development Tutorials</Link>
+              <Link href="/">How-To Blog</Link>
+              <Link href="/">YouTube Playlist</Link>
+            </div>
           </div>
 
         </div>
 
+        {/* Bottom Section */}
 
-        <div className='flex flex-col gap-6'>
-          <h1 className='text-xl'>Company</h1>
-          <div className='text-md flex flex-col gap-2'>
-            <Link href={"/"}>About</Link>
-             <Link href={"/"}>Feature</Link>
-              <Link href={"/"}>Works</Link>
-               <Link href={"/"}>Career</Link>
+        <div className="border-t border-gray-300 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-5">
 
+          <p className="text-gray-500 text-center md:text-left">
+            Shop.co © 2026–2027. All Rights Reserved.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-3">
+            {paymentLogo.map((logo, index) => (
+              <Image
+                key={index}
+                src={logo}
+                alt="payment"
+                className="w-14 md:w-16 lg:w-20 h-auto"
+              />
+            ))}
           </div>
+
         </div>
-
-
-        <div className='flex flex-col gap-6'>
-          <h1 className='text-xl'>Help</h1>
-          <div className='text-md flex flex-col gap-2'>
-            <Link href={"/"}>Customer Support</Link>
-             <Link href={"/"}>Delivery Detail</Link>
-              <Link href={"/"}>Terms & COnditions</Link>
-               <Link href={"/"}>Privacy Policy</Link>
-
-          </div>
-        </div>
-
-        <div className='flex flex-col gap-6'>
-          <h1 className='text-xl'>FAQ</h1>
-          <div className='text-md flex flex-col gap-2'>
-            <Link href={"/"}>Account</Link>
-             <Link href={"/"}>Manage Delivery</Link>
-              <Link href={"/"}>Orders</Link>
-               <Link href={"/"}>Payments</Link>
-
-          </div>
-        </div>
-
-        <div className='flex flex-col gap-6'>
-          <h1 className='text-xl'>Resources</h1>
-          <div className='text-md flex flex-col gap-2'>
-            <Link href={"/"}>Free Ebook</Link>
-             <Link href={"/"}>Developement Tutorial</Link>
-              <Link href={"/"}>How To Blog</Link>
-               <Link href={"/"}>Youtube Playlist</Link>
-
-          </div>
-        </div>
-
 
       </div>
-      <div className='px-20 mt-6  ' >
-           <div className='flex justify-between items-center border-t-2 border-gray-400 mt-1'>
-             <div >
-              <p>Shop.co <span>©</span> 2026-2027,All Rights Reserved</p>
-            </div>
-            <div className='flex gap-1'>
-              {
-                paymentLogo?.map((e,i)=>(
-                  <Image src={e} key={i+1} alt='logo' className='w-20 p-4 h-15 '/>
-                ))
-              }
 
-            </div>
-           </div>
+    </footer>
+  );
+};
 
-      </div>
-    </>
-  )
-}
-
-export default Footer
+export default Footer;
