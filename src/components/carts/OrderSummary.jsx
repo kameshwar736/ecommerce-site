@@ -7,7 +7,7 @@ const OrderSummary = () => {
   const { cartTotals } = useContext(CartContext)
 
   return (
-    <div className='p-5 flex flex-col gap-4 w-120 ml-10 border rounded-2xl'>
+    <div className='p-5 flex flex-col gap-4 lg:w-120 md:w-60 lg:ml-10 border rounded-2xl'>
         <div>
             <h1 className='text-xl font-semibold'>Order Summary</h1>
         </div>
