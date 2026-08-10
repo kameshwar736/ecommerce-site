@@ -1,101 +1,258 @@
-
 export const products = [
   {
     id: 1,
     name: "Vertical Striped Shirt",
-    image: '/products/verticalStripShirt.webp' ,
+    image: "/products/verticalStripShirt.webp",
     price: 120,
     oldPrice: 150,
     discount: 20,
     rating: 4,
     section: "new-arrivals",
-    category : "casual",
-    type   : "Shirt"
-  
+    category: "casual",
+    type: "Shirt",
+    color: ["Blue", "White"],
+    size: ["M", "L", "XL"]
   },
-   {
+  {
     id: 2,
-    name:" loose fit bermuda short",
-    image:  '/products/shorts.jpg',
+    name: "Loose Fit Bermuda Short",
+    image: "/products/shorts.jpg",
     price: 120,
     rating: 4.5,
     section: "new-arrivals",
-    category : "gym",
-    type : "Short"
+    category: "gym",
+    type: "Short",
+    color: ["Black", "Gray"],
+    size: ["M", "L", "XL"]
   },
   {
     id: 3,
-    name: "Courage TShirt",
-    image: '/products/couragetshirt.jpg',
+    name: "Courage T-Shirt",
+    image: "/products/couragetshirt.jpg",
     price: 120,
     oldPrice: 150,
     discount: 20,
     rating: 4,
     section: "new-arrivals",
-    category : "gym",
-    type : "T-Shirt"
+    category: "gym",
+    type: "T-Shirt",
+    color: ["Red", "Black"],
+    size: ["S", "M", "L"]
   },
-   {
+  {
     id: 4,
     name: "Skinny Jean",
-    image: '/products/jean.jpg',
+    image: "/products/jean.jpg",
     price: 120,
     oldPrice: 150,
     discount: 20,
     rating: 4.5,
     section: "new-arrivals",
-    category : "formal",
-    type : "Jean"
+    category: "formal",
+    type: "Jean",
+    color: ["Blue", "Black"],
+    size: ["30", "32", "34"]
   },
-
-   {
+  {
     id: 5,
-    name: "TShirt with Tape Detail",
-    image: '/products/tapeT.webp',
+    name: "T-Shirt with Tape Detail",
+    image: "/products/tapeT.webp",
     price: 240,
     rating: 5,
     section: "top-selling",
-    category : "formal",
-    type : "T-Shirt"
+    category: "formal",
+    type: "T-Shirt",
+    color: ["White", "Black"],
+    size: ["M", "L", "XL"]
   },
-   {
+  {
     id: 6,
     name: "Sky Blue Jean",
-    image: '/products/SkyBlueJean.jpg',
+    image: "/products/SkyBlueJean.jpg",
     price: 240,
     rating: 5,
     section: "top-selling",
-    category : "casual",
-    type : "Jean"
+    category: "casual",
+    type: "Jean",
+    color: ["Sky Blue", "Blue"],
+    size: ["30", "32", "34"]
   },
-   {
+  {
     id: 7,
     name: "Checked Shirt",
-    image: '/products/checkedShirt.jpg',
+    image: "/products/checkedShirt.jpg",
     price: 240,
     rating: 5,
     section: "top-selling",
-    category : "casual",
-    type : "Shirt"
+    category: "casual",
+    type: "Shirt",
+    color: ["Green", "White"],
+    size: ["M", "L", "XL"]
   },
-   {
+  {
     id: 8,
-    name: "Sleve Shirt",
-    image: '/products/sleve.jpg',
+    name: "Sleeve Shirt",
+    image: "/products/sleve.jpg",
     price: 240,
     rating: 5,
     section: "top-selling",
-    category : "casual",
-    type : "Shirt"
+    category: "casual",
+    type: "Shirt",
+    color: ["Navy", "Black"],
+    size: ["L", "XL", "XXL"]
   },
-
-
-
-
-
-
-
-  
+ {
+  id: 9,
+  name: "Classic Hoodie",
+  image: "/products/verticalStripShirt.webp",
+  price: 180,
+  oldPrice: 220,
+  discount: 18,
+  rating: 4.2,
+  section: "new-arrivals",
+  category: "gym",
+  type: "Hoodie",
+  color: ["Black", "Gray"],
+  size: ["M", "L", "XL"]
+},
+{
+  id: 10,
+  name: "Slim Fit Shirt",
+  image: "/products/checkedShirt.jpg",
+  price: 190,
+  rating: 4.6,
+  section: "top-selling",
+  category: "formal",
+  type: "Shirt",
+  color: ["White", "Blue"],
+  size: ["M", "L", "XL"]
+},
+{
+  id: 11,
+  name: "Cargo Shorts",
+  image: "/products/shorts.jpg",
+  price: 150,
+  rating: 4.3,
+  section: "new-arrivals",
+  category: "casual",
+  type: "Short",
+  color: ["Khaki", "Black"],
+  size: ["30", "32", "34"]
+},
+{
+  id: 12,
+  name: "Premium Jean",
+  image: "/products/SkyBlueJean.jpg",
+  price: 250,
+  oldPrice: 300,
+  discount: 17,
+  rating: 4.8,
+  section: "top-selling",
+  category: "party",
+  type: "Jean",
+  color: ["Blue", "Black"],
+  size: ["30", "32", "34", "36"]
+},
+{
+  id: 13,
+  name: "Graphic Tee",
+  image: "/products/couragetshirt.jpg",
+  price: 110,
+  rating: 4.1,
+  section: "new-arrivals",
+  category: "casual",
+  type: "T-Shirt",
+  color: ["Yellow", "White"],
+  size: ["S", "M", "L"]
+},
+{
+  id: 14,
+  name: "Office Shirt",
+  image: "/products/verticalStripShirt.webp",
+  price: 210,
+  rating: 4.7,
+  section: "top-selling",
+  category: "formal",
+  type: "Shirt",
+  color: ["White", "Gray"],
+  size: ["M", "L", "XL"]
+},
+{
+  id: 15,
+  name: "Training Hoodie",
+  image: "/products/sleve.jpg",
+  price: 230,
+  rating: 4.4,
+  section: "new-arrivals",
+  category: "gym",
+  type: "Hoodie",
+  color: ["Red", "Black"],
+  size: ["M", "L", "XL"]
+},
+{
+  id: 16,
+  name: "Linen Shirt",
+  image: "/products/checkedShirt.jpg",
+  price: 260,
+  rating: 4.5,
+  section: "top-selling",
+  category: "formal",
+  type: "Shirt",
+  color: ["Beige", "White"],
+  size: ["M", "L", "XL"]
+},
+{
+  id: 17,
+  name: "Jogger Pants",
+  image: "/products/jean.jpg",
+  price: 170,
+  rating: 4.3,
+  section: "new-arrivals",
+  category: "gym",
+  type: "Jean",
+  color: ["Gray", "Black"],
+  size: ["M", "L", "XL"]
+},
+{
+  id: 18,
+  name: "Luxury Shirt",
+  image: "/products/tapeT.webp",
+  price: 320,
+  oldPrice: 390,
+  discount: 18,
+  rating: 5,
+  section: "top-selling",
+  category: "party",
+  type: "Shirt",
+  color: ["Black", "Gold"],
+  size: ["L", "XL", "XXL"]
+},
+{
+  id: 19,
+  name: "Oversized Tee",
+  image: "/products/couragetshirt.jpg",
+  price: 140,
+  rating: 4.6,
+  section: "new-arrivals",
+  category: "casual",
+  type: "T-Shirt",
+  color: ["Purple", "White"],
+  size: ["M", "L", "XL"]
+},
+{
+  id: 20,
+  name: "Denim Jacket",
+  image: "/products/SkyBlueJean.jpg",
+  price: 320,
+  oldPrice: 380,
+  discount: 16,
+  rating: 4.9,
+  section: "top-selling",
+  category: "casual",
+  type: "Hoodie",
+  color: ["Blue", "Black"],
+  size: ["M", "L", "XL", "XXL"]
+}
 ];
 
 export default products;

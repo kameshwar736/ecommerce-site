@@ -114,13 +114,14 @@ const Footer = () => {
             Shop.co © 2026–2027. All Rights Reserved.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-5">
             {paymentLogo.map((logo, index) => (
               <Image
                 key={index}
                 src={logo}
+                
                 alt="payment"
-                className="w-14 md:w-16 lg:w-20 h-auto"
+                className="   md:w-16 lg:w-20 md:h-auto lg:h-10 "
               />
             ))}
           </div>

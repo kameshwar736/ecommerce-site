@@ -2,6 +2,7 @@
 
 import allProducts from "@/data/products";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
@@ -22,7 +23,8 @@ const TopSelling = () => {
       {/* Products */}
       <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mt-10 w-full px-5 md:px-10 lg:px-16 xl:px-28">
         {products.map((product) => (
-          <div key={product.id} className="flex flex-col gap-3 md:gap-4">
+          <Link  key={product.id} href={`/product/${product.id}`} className="group">
+          <div key={product.id} className="flex flex-col gap-3 md:gap-4  cursor-pointer transition-all duration-300 hover:scale-105 ">
             <div className="overflow-hidden rounded-2xl bg-[#F0EEED]">
               <Image
                 src={product.image}
@@ -70,18 +72,21 @@ const TopSelling = () => {
               )}
             </div>
           </div>
+          </Link>
         ))}
       </div>
 
       {/* View More Button */}
-      {products.length < topSellingProducts.length && (
+     
         <button
-          onClick={() => setProducts(topSellingProducts)}
+          onClick={() => setProducts(allProducts)}
           className="mt-12 border border-gray-300 px-8 md:px-12 py-3 rounded-full hover:bg-black hover:text-white transition"
         >
           View More
         </button>
-      )}
+     
+
+
     </section>
   );
 };

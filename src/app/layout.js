@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Newsletter from "@/components/layout/Newsletter";
 import Footer from "@/components/layout/Footer";
 import { ProductProvider } from "@/contexts/ProductContext";
+import { CartProvider } from "@/contexts/CartContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,17 +29,19 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body>
-        <ProductProvider>
-          
-        <TopBanner/>
-        <Navbar />
-        
-        <main>{children}</main>
+        <CartProvider>
+          <ProductProvider>
 
-        <Newsletter />
+            <TopBanner />
+            <Navbar />
 
-        <Footer />
-        </ProductProvider>
+            <main>{children}</main>
+
+            <Newsletter />
+
+            <Footer />
+          </ProductProvider>
+        </CartProvider>
       </body>
     </html>
   );

@@ -66,7 +66,7 @@ const FilterSidebar = () => {
 
     return (
         <>
-            <div className='w-80 border rounded-xl px-10 mx-25 mb-10'>
+            <div className='w-120 border rounded-xl px-5 ml-23 mb-10 h-330'>
                 <div className='flex justify-between py-5 border-b-2 border-gray-400  '>
                     <h1 className='font-bold text-xl'>Filters</h1>
                     <Image src={'/icons/filter.png'} width={20} height={5} alt='filterlogo' className='rotate-90' />
@@ -188,9 +188,9 @@ const FilterSidebar = () => {
                 {/* dress Style */}
 
                 <div className="py-5  ">
-                    <div className='flex justify-between   '>
+                    <div className='flex justify-start   '>
                         <h1 className='font-bold text-xl'>Dress Style</h1>
-                        <Image src={'/icons/filter.png'} width={20} height={5} alt='filterlogo' className='rotate-90' />
+                       
                     </div>
 
                     <div className='flex flex-col gap-3  text-gray-500 py-5 '>
