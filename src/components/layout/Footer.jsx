@@ -121,7 +121,7 @@ const Footer = () => {
                 src={logo}
                 
                 alt="payment"
-                className="   md:w-16 lg:w-20 md:h-auto lg:h-10 "
+                className="w-12 h-8 sm:w-14 sm:h-9 md:w-16 md:h-auto lg:w-20 lg:h-10 object-contain"
               />
             ))}
           </div>
