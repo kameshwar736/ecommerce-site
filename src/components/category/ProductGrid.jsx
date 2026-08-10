@@ -144,8 +144,8 @@ const ProductGrid = ({ setIsFilterOpen }) => {
         </div>
 
         {/* next & prev */}
-        <div className="flex flex-wrap justify-center  gap-2">
-          <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-4 mt-10">
+        <div className="flex flex-wrap justify-center gap-2">
+          <div className="flex md:flex-col lg:flex-row lg:justify-between items-center gap-4 mt-10">
 
             <button
               onClick={() => setCurrentPage((prev) => prev - 1)}
