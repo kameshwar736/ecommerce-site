@@ -11,8 +11,6 @@ const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
 
-    const [cartProducts,setCartProducts] = useState([])
-
 
     const handleCart = (data) => {
 
@@ -20,12 +18,18 @@ export const CartProvider = ({ children }) => {
         
         const addQuantity = {...searchProduct,quantity : data.quantity}
         
-        setCartProducts(addQuantity)
+        const getLocal = JSON.parse(localStorage.getItem("CartItems")) || []
+
+        getLocal.push(addQuantity)
+
+        localStorage.setItem("CartItems",JSON.stringify(getLocal))
+
+        alert("Added to Cart")
 
     }
     return (
         <>
-            <CartContext.Provider value={{ handleCart ,cartProducts}}>
+            <CartContext.Provider value={{ handleCart}}>
                 {children}
             </CartContext.Provider>
         </>
