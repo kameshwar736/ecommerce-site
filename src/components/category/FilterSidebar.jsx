@@ -4,7 +4,7 @@ import ProductContext from '@/contexts/ProductContext'
 import Image from 'next/image'
 import React, { useContext, useEffect, useMemo, useState } from 'react'
 
-const FilterSidebar = () => {
+const FilterSidebar = ({ isFilterOpen = false, setIsFilterOpen = () => { }, }) => {
 
     const { dummyProducts, typeOptions, categoryOptions, priceRange, selectedTypes, selectedCategories, selectedColors, selectedSizes, toggleType, toggleCategory, toggleColor, toggleSize, setPriceRange } = useContext(ProductContext)
 
@@ -45,10 +45,32 @@ const FilterSidebar = () => {
 
     return (
         <>
-            <div className='w-120 border rounded-xl px-5 ml-23 mb-10 h-330'>
-                <div className='flex justify-between py-5 border-b-2 border-gray-400  '>
-                    <h1 className='font-bold text-xl'>Filters</h1>
-                    <Image src={'/icons/filter.png'} width={20} height={5} alt='filterlogo' className='rotate-90' />
+
+
+            {/* Sidebar */}
+
+            <div className="bg-white border rounded-2xl p-5 -ml-5 lg:w-[320px] lg:h-auto w-full">
+                <div className="flex justify-between items-center py-5 border-b">
+
+                    <h1 className="font-bold text-xl">
+                        Filters
+                    </h1>
+
+                    <Image
+                        src="/icons/filter.png"
+                        width={20}
+                        height={20}
+                        alt=""
+                        className="hidden lg:block rotate-90"
+                    />
+
+                    <button
+                        className="text-2xl lg:hidden"
+                        onClick={() => setIsFilterOpen?.(false)}
+                    >
+                        ✕
+                    </button>
+
                 </div>
 
                 {/* dress type */}
@@ -171,9 +193,9 @@ const FilterSidebar = () => {
 
                     <div className='flex flex-wrap gap-4  '>
                         {
-                            sizes?.map((e,i)=>(
+                            sizes?.map((e, i) => (
                                 <button
-                                    key={i+1}
+                                    key={i + 1}
                                     onClick={() => toggleSize(e)}
                                     className={`px-5 py-2 rounded-4xl ${selectedSizes.includes(e) ? 'bg-black text-white' : 'bg-gray-100 text-gray-500'}`}
                                 >
@@ -190,7 +212,7 @@ const FilterSidebar = () => {
                 <div className="py-5  ">
                     <div className='flex justify-start   '>
                         <h1 className='font-bold text-xl'>Dress Style</h1>
-                       
+
                     </div>
 
                     <div className='flex flex-col gap-3  text-gray-500 py-5 '>
@@ -210,10 +232,21 @@ const FilterSidebar = () => {
 
                 {/* apply filter btn */}
 
-                <button className='bg-black px-7 py-2 rounded-4xl w-full text-lg text-white mb-10'>
+                <button
+                    onClick={() => {
+                        if (setIsFilterOpen) {
+                            setIsFilterOpen(false);
+                        }
+                    }}
+                >
                     Apply Filter
                 </button>
-                <button onClick={clearFilter} className='border px-7 py-2 rounded-4xl w-full text-lg text-black mb-10'>
+                <button
+                    onClick={() => {
+                        clearFilter();
+                        setIsFilterOpen?.(false);
+                    }}
+                >
                     Reset Filters
                 </button>
             </div>
