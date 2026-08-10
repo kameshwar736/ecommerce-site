@@ -6,44 +6,19 @@ import React, { useContext, useEffect, useMemo, useState } from 'react'
 
 const FilterSidebar = () => {
 
-    const [products, setProducts] = useState([])
-    const [type, setType] = useState([])
-    const [category,setCategory] = useState([])
-    const [min, setMin] = useState(50);
-    const [max, setMax] = useState(200);
-
-
-    const MIN = 0;
-    const MAX = 300;
-
-
-    const { dummyProducts } = useContext(ProductContext)
-
-    useEffect(() => {
-        setProducts(dummyProducts)
-
-        const uniqueType = [...new Set(dummyProducts.map((e) => e.type))]
-        const uniqueCategory =  [...new Set(dummyProducts.map((e) => e.category))]
-
-        setType(uniqueType)
-
-        setCategory(uniqueCategory)
-    }, [])
-
-
-    
+    const { dummyProducts, typeOptions, categoryOptions, priceRange, selectedTypes, selectedCategories, selectedColors, selectedSizes, toggleType, toggleCategory, toggleColor, toggleSize, setPriceRange } = useContext(ProductContext)
 
     const colors = [
-        "bg-green-500",
-        "bg-red-500",
-        "bg-yellow-400",
-        "bg-orange-500",
-        "bg-sky-400",
-        "bg-blue-600",
-        "bg-purple-600",
-        "bg-pink-500",
-        "bg-white",
-        "bg-black",
+        { className: "bg-green-500", name: "Green" },
+        { className: "bg-red-500", name: "Red" },
+        { className: "bg-yellow-400", name: "Yellow" },
+        { className: "bg-orange-500", name: "Orange" },
+        { className: "bg-sky-400", name: "Sky Blue" },
+        { className: "bg-blue-600", name: "Blue" },
+        { className: "bg-purple-600", name: "Purple" },
+        { className: "bg-pink-500", name: "Pink" },
+        { className: "bg-white", name: "White" },
+        { className: "bg-black", name: "Black" },
     ];
 
     const sizes = [
@@ -57,6 +32,10 @@ const FilterSidebar = () => {
         "3X-Large",
         "4X-Large",
     ];
+
+    const clearFilter = () => {
+        setPriceRange({ min: 0, max: 300 })
+    }
 
 
 
@@ -78,9 +57,14 @@ const FilterSidebar = () => {
 
 
                     {
-                        type?.map((e, i) => (
+                        typeOptions?.map((e, i) => (
                             <div key={i + 1} className='flex justify-between'>
-                                <button className='text-start text-lg' >{e}</button>
+                                <button
+                                    className={`text-start text-lg ${selectedTypes.includes(e) ? 'font-bold text-black' : ''}`}
+                                    onClick={() => toggleType(e)}
+                                >
+                                    {e}
+                                </button>
                                 <span>{">"}</span>
                             </div>
                         ))
@@ -108,8 +92,8 @@ const FilterSidebar = () => {
                             <div
                                 className="absolute top-1/2 h-1 bg-black rounded-full -translate-y-1/2"
                                 style={{
-                                    left: `${(min / 300) * 100}%`,
-                                    width: `${((max - min) / 300) * 100}%`,
+                                    left: `${(priceRange.min / 300) * 100}%`,
+                                    width: `${((priceRange.max - priceRange.min) / 300) * 100}%`,
                                 }}
                             ></div>
 
@@ -118,9 +102,12 @@ const FilterSidebar = () => {
                                 type="range"
                                 min="0"
                                 max="300"
-                                value={min}
+                                value={priceRange.min}
                                 onChange={(e) =>
-                                    setMin(Math.min(Number(e.target.value), max - 1))
+                                    setPriceRange((current) => ({
+                                        min: Math.min(Number(e.target.value), current.max - 1),
+                                        max: current.max,
+                                    }))
                                 }
                                 className="absolute w-full appearance-none bg-transparent pointer-events-none"
                             />
@@ -130,9 +117,12 @@ const FilterSidebar = () => {
                                 type="range"
                                 min="0"
                                 max="300"
-                                value={max}
+                                value={priceRange.max}
                                 onChange={(e) =>
-                                    setMax(Math.max(Number(e.target.value), min + 1))
+                                    setPriceRange((current) => ({
+                                        min: current.min,
+                                        max: Math.max(Number(e.target.value), current.min + 1),
+                                    }))
                                 }
                                 className="absolute w-full appearance-none bg-transparent pointer-events-none"
                             />
@@ -140,8 +130,8 @@ const FilterSidebar = () => {
                         </div>
 
                         <div className="flex justify-between mt-4 text-sm font-semibold">
-                            <span>${min}</span>
-                            <span>${max}</span>
+                            <span>${priceRange.min}</span>
+                            <span>${priceRange.max}</span>
                         </div>
 
                     </div>
@@ -159,7 +149,11 @@ const FilterSidebar = () => {
                     <div className='flex flex-wrap gap-4'>
                         {
                             colors?.map((e, i) => (
-                                <button className={`p-4 rounded-full ${e} border-gray-900 `} key={i + 1}></button>
+                                <button
+                                    className={`p-4 rounded-full ${e.className} border ${selectedColors.includes(e.name) ? 'border-black border-4' : 'border-gray-900'}`}
+                                    key={i + 1}
+                                    onClick={() => toggleColor(e.name)}
+                                ></button>
                             ))
                         }
                     </div>
@@ -178,7 +172,13 @@ const FilterSidebar = () => {
                     <div className='flex flex-wrap gap-4  '>
                         {
                             sizes?.map((e,i)=>(
-                                <button key={i+1} className='px-5 py-2 bg-gray-100 text-gray-500 rounded-4xl'>{e}</button>
+                                <button
+                                    key={i+1}
+                                    onClick={() => toggleSize(e)}
+                                    className={`px-5 py-2 rounded-4xl ${selectedSizes.includes(e) ? 'bg-black text-white' : 'bg-gray-100 text-gray-500'}`}
+                                >
+                                    {e}
+                                </button>
                             ))
                         }
                     </div>
@@ -194,9 +194,14 @@ const FilterSidebar = () => {
                     </div>
 
                     <div className='flex flex-col gap-3  text-gray-500 py-5 '>
-                        {category?.map((e, i) => (
+                        {categoryOptions?.map((e, i) => (
                             <div key={i + 1} className='flex justify-between'>
-                                <button className='text-start text-lg' >{e}</button>
+                                <button
+                                    className={`text-start text-lg ${selectedCategories.includes(e) ? 'font-bold text-black' : ''}`}
+                                    onClick={() => toggleCategory(e)}
+                                >
+                                    {e}
+                                </button>
                                 <span>{">"}</span>
                             </div>
                         ))}
@@ -207,6 +212,9 @@ const FilterSidebar = () => {
 
                 <button className='bg-black px-7 py-2 rounded-4xl w-full text-lg text-white mb-10'>
                     Apply Filter
+                </button>
+                <button onClick={clearFilter} className='border px-7 py-2 rounded-4xl w-full text-lg text-black mb-10'>
+                    Reset Filters
                 </button>
             </div>
         </>

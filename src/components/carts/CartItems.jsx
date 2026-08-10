@@ -60,7 +60,7 @@ const CartItems = () => {
                     {/* cartItems */}
                     <div>
                         {
-                            cart.length == 0 ? <div className='flex justify-center items-center relative top-40'>No items at Cart</div> :
+                            cart.length == 0 ? <div className='flex justify-center items-center relative top-'>No items at Cart</div> :
                                 cart.map((e) => (
                                     <div key={e.id} className='flex p-10 gap-6 border-b-2 border-gray-400 w-190 '>
                                         <div>

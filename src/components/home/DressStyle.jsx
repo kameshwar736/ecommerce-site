@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import casual from "../../../public/images/casual.png";
 import formal from "../../../public/images/formal.png";
@@ -22,19 +23,23 @@ const DressStyle = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 
           <div className="lg:col-span-1">
-            <Image
-              src={casual}
-              alt="Casual"
-              className="w-full h-56 md:h-72 lg:h-80 rounded-2xl object-cover"
-            />
+            <Link href="/category">
+              <Image
+                src={casual}
+                alt="Casual"
+                className="w-full h-56 md:h-72 lg:h-80 rounded-2xl object-cover"
+              />
+            </Link>
           </div>
 
           <div className="lg:col-span-1">
-            <Image
-              src={formal}
-              alt="Formal"
-              className="w-full h-56 md:h-72 lg:h-80 rounded-2xl object-cover"
-            />
+            <Link href="/category">
+              <Image
+                src={formal}
+                alt="Formal"
+                className="w-full h-56 md:h-72 lg:h-80 rounded-2xl object-cover"
+              />
+            </Link>
           </div>
 
         </div>
@@ -43,19 +48,23 @@ const DressStyle = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 
           <div className="lg:col-span-1">
-            <Image
-              src={party}
-              alt="Party"
-              className="w-full h-56 md:h-72 lg:h-80 rounded-2xl object-cover"
-            />
+            <Link href="/category">
+              <Image
+                src={party}
+                alt="Party"
+                className="w-full h-56 md:h-72 lg:h-80 rounded-2xl object-cover"
+              />
+            </Link>
           </div>
 
           <div className="lg:col-span-1">
-            <Image
-              src={gym}
-              alt="Gym"
-              className="w-full h-56 md:h-72 lg:h-80 rounded-2xl object-cover"
-            />
+            <Link href="/category">
+              <Image
+                src={gym}
+                alt="Gym"
+                className="w-full h-56 md:h-72 lg:h-80 rounded-2xl object-cover"
+              />
+            </Link>
           </div>
 
         </div>

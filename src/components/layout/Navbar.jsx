@@ -12,9 +12,9 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Shop", href: "/category" },
-    { name: "On Sale", href: "#" },
+    { name: "On Sale", href: "/" },
     { name: "New Arrivals", href: "#newArrival" },
-    { name: "Brands", href: "#" },
+    { name: "Brands", href: "/" },
   ];
 
   return (
@@ -60,7 +60,9 @@ const Navbar = () => {
 
           {/* Icons */}
           <div className="flex items-center gap-5">
-            <Image src={cart} alt="cart" width={24} height={24} />
+            <Link href="/cart">
+              <Image src={cart} alt="cart" width={24} height={24} />
+            </Link>
             <Image src={user} alt="user" width={24} height={24} />
           </div>
 

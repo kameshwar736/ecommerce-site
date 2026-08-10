@@ -10,15 +10,15 @@ const ProductGrid = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const { dummyProducts } = useContext(ProductContext)
+  const { filteredProducts } = useContext(ProductContext)
 
   const PRODUCTS_PER_PAGE = 9;
-  const totalPages = Math.ceil(dummyProducts.length / PRODUCTS_PER_PAGE);
+  const totalPages = Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE);
 
   const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
   const endIndex = startIndex + PRODUCTS_PER_PAGE;
 
-  const currentProducts = dummyProducts.slice(startIndex, endIndex);
+  const currentProducts = filteredProducts.slice(startIndex, endIndex);
 
 
 
@@ -33,9 +33,9 @@ const ProductGrid = () => {
           </div>
           <div className='flex gap-3 text-gray-400'>
             <p>
-              Showing {startIndex + 1} to{" "}
-              {Math.min(endIndex, dummyProducts.length)} of{" "}
-              {dummyProducts.length} products
+              Showing {filteredProducts.length === 0 ? 0 : startIndex + 1} to{" "}
+              {Math.min(endIndex, filteredProducts.length)} of{" "}
+              {filteredProducts.length} products
             </p>
             <p>Sort by :</p>
             <select className='text-black'>
@@ -49,6 +49,10 @@ const ProductGrid = () => {
         {/* Products */}
 
         <div className='grid grid-cols-3 gap-10 py-5 gap-y-15'>
+
+          {filteredProducts.length === 0 && (
+            <div className='col-span-3 text-center py-10 text-gray-500'>No products matched the selected filters.</div>
+          )}
 
           {currentProducts.map((product) => (
             <Link  key={product.id} href={`/product/${product.id}`} className="group">

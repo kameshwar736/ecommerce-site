@@ -1,7 +1,11 @@
-import React from 'react'
+"use client"
+import CartContext from '@/contexts/CartContext'
+import React, { useContext } from 'react'
 import CouponForm from './CouponForm'
 
 const OrderSummary = () => {
+  const { cartTotals } = useContext(CartContext)
+
   return (
     <div className='p-5 flex flex-col gap-4 w-120 ml-10 border rounded-2xl'>
         <div>
@@ -10,20 +14,20 @@ const OrderSummary = () => {
         <div className='flex flex-col gap-3 text-gray-500'>
             <div className='flex justify-between'>
                 <p>SubTotal</p>
-                <p className='text-black font-bold'>$562</p>
+                <p className='text-black font-bold'>${cartTotals.subtotal}</p>
             </div>
             <div className='flex  justify-between'>
                 <p>Discount(-20%)</p>
-                <p className='text-red-600 font-bold'>-$113</p>
+                <p className='text-red-600 font-bold'>-${cartTotals.discount}</p>
             </div>
             <div className='flex  justify-between'>
                 <p>Delivery Fee</p>
-                <p className='text-black font-bold'>$13</p>
+                <p className='text-black font-bold'>${cartTotals.deliveryFee}</p>
             </div>
         </div>
         <div className='flex  justify-between border-t-2 border-gray-400 pt-6'>
             <p>Total</p>
-            <p className='text-black font-bold text-lg'>$456</p>
+            <p className='text-black font-bold text-lg'>${cartTotals.total}</p>
         </div>
 
         <div>
