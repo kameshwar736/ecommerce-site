@@ -16,20 +16,20 @@ A modern and responsive e-commerce web application built with **Next.js**, **Rea
 
 (![alt text](</public/readMe/home1.png>))
 (![alt text](</public/readMe/home2.png>))
-(![alt text](</public/readMe/home3.png.png>))
-(![alt text](</public/readMe/home4.png.png>))
+(![alt text](</public/readMe/home3.png>))
+(![alt text](</public/readMe/home4.png>))
 
 ### Category Page
 
-(![alt text](/public/readMe/category1.png.png)))
+(![alt text](/public/readMe/category1.png))
 
 ### Product Detail Page
 
-(![alt text](/public/readMe/productDetail.png.png))
+(![alt text](/public/readMe/productDetail.png))
 
 ### Cart Page
 
-(![alt text](/public/readMe/cartImage1.png.png))
+(![alt text](/public/readMe/cartImage1.png))
 
 ---
 
